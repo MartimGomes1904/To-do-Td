@@ -1,0 +1,9 @@
+{
+  "scopeName": "source.td",
+  "name": "To-do",
+  "patterns": [
+    {
+      "include": "source.json"
+    }
+  ]
+}

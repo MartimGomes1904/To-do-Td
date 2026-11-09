@@ -1,0 +1,10 @@
+{
+  "displayName": "Gomes Task Board",
+  "description": "Listas de tarefas visuais: lista e Kanban, subtarefas, datas limite e etiquetas. Português e inglês.",
+  "container.title": "To-do",
+  "view.name": "Listas de tarefas",
+  "cmd.newFile": "To-do: Novo ficheiro .td",
+  "cmd.openAsText": "To-do: Abrir como texto (JSON)",
+  "cmd.releaseNotes": "To-do: Mostrar notas de versão",
+  "cfg.showReleaseNotes": "Mostrar a página de notas de versão depois que a extensão for atualizada."
+}

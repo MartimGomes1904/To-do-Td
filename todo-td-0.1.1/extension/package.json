@@ -1,0 +1,138 @@
+{
+  "name": "todo-td",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "0.1.1",
+  "license": "MIT",
+  "publisher": "MartimGomes",
+  "icon": "icons/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "todo",
+    "to-do",
+    "tasks",
+    "kanban",
+    "checklist"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "workspaceContains:**/*.td",
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "td",
+        "aliases": [
+          "To-do",
+          "td"
+        ],
+        "extensions": [
+          ".td"
+        ],
+        "icon": {
+          "light": "./icons/td.svg",
+          "dark": "./icons/td.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "td",
+        "scopeName": "source.td",
+        "path": "./syntaxes/td.tmLanguage.json"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "todoTd.editor",
+        "displayName": "Gomes Task Board",
+        "selector": [
+          {
+            "filenamePattern": "*.td"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "todoTd",
+          "title": "%container.title%",
+          "icon": "icons/activitybar.svg"
+        }
+      ]
+    },
+    "views": {
+      "todoTd": [
+        {
+          "id": "todoTd.files",
+          "name": "%view.name%",
+          "icon": "icons/activitybar.svg"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "todoTd.files",
+        "contents": "Não tens nenhum ficheiro .td criado.\n[Criar ficheiro .td](command:todoTd.newFile)",
+        "when": "todoTd.noFiles && workspaceFolderCount > 0 && todoTd.lang == 'pt'"
+      },
+      {
+        "view": "todoTd.files",
+        "contents": "You don't have any .td file yet.\n[Create .td file](command:todoTd.newFile)",
+        "when": "todoTd.noFiles && workspaceFolderCount > 0 && todoTd.lang != 'pt'"
+      },
+      {
+        "view": "todoTd.files",
+        "contents": "Abre uma pasta para começares a criar listas de tarefas.\n[Abrir pasta](command:workbench.action.files.openFolder)",
+        "when": "workspaceFolderCount == 0 && todoTd.lang == 'pt'"
+      },
+      {
+        "view": "todoTd.files",
+        "contents": "Open a folder to start creating to-do lists.\n[Open Folder](command:workbench.action.files.openFolder)",
+        "when": "workspaceFolderCount == 0 && todoTd.lang != 'pt'"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "todoTd.newFile",
+          "when": "view == todoTd.files",
+          "group": "navigation"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "todoTd.newFile",
+        "title": "%cmd.newFile%",
+        "icon": "$(add)"
+      },
+      {
+        "command": "todoTd.openAsText",
+        "title": "%cmd.openAsText%"
+      },
+      {
+        "command": "todoTd.showReleaseNotes",
+        "title": "%cmd.releaseNotes%"
+      }
+    ],
+    "configuration": {
+      "title": "To-do",
+      "properties": {
+        "todoTd.showReleaseNotes": {
+          "type": "boolean",
+          "default": true,
+          "description": "%cfg.showReleaseNotes%"
+        }
+      }
+    }
+  }
+}

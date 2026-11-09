@@ -1,0 +1,10 @@
+{
+  "displayName": "Gomes Task Board",
+  "description": "Visual to-do lists: list and Kanban, subtasks, due dates and labels. English and Portuguese.",
+  "container.title": "To-do",
+  "view.name": "To-do lists",
+  "cmd.newFile": "To-do: New .td file",
+  "cmd.openAsText": "To-do: Open as text (JSON)",
+  "cmd.releaseNotes": "To-do: Show release notes",
+  "cfg.showReleaseNotes": "Show the release notes page after the extension is updated."
+}
